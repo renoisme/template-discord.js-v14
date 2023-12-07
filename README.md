@@ -10,4 +10,4 @@ TOKEN=HERE
 clientId=HERE
 ```
 
-４．`node index.js`
+４．`node src/index.js`
