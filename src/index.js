@@ -31,7 +31,7 @@ client.on(Events.MessageCreate, async message => {
         message.channel.send('pong!');
     }
 
-    if (content.startsWith('!me')) {
+    if (message.content.startsWith('!me')) {
         let user;
         if (message.mentions.users.size > 0) {
             user = message.mentions.users.first();
