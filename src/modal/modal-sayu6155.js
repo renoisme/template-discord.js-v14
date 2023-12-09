@@ -4,7 +4,6 @@ const {
     Client,
     GatewayIntentBits,
     Events,
-    EmbedBuilder,
     SlashCommandBuilder,
     ModalBuilder,
     TextInputBuilder,
@@ -29,11 +28,13 @@ const client = new Client({
         ]
 });
 
+const guildId = '';
+
 client.once(Events.ClientReady, (c) => {
     console.log(`Log in with ${c.user.tag}`);
 
     if (commands.length > 0) {
-        client.application.commands.set(commands, '1169258972063219842');
+        client.application.commands.set(commands, guildId);//どこでもコマンドを使えるようにしたい場合は、.set(commands, guildId);にする
     }
 
 });
