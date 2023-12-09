@@ -28,13 +28,11 @@ const client = new Client({
         ]
 });
 
-const guildId = '';
-
 client.once(Events.ClientReady, (c) => {
     console.log(`Log in with ${c.user.tag}`);
 
     if (commands.length > 0) {
-        client.application.commands.set(commands, guildId);//どこでもコマンドを使えるようにしたい場合は、.set(commands, guildId);にする
+        client.application.commands.set(commands, process.env.DEV_GUILD_ID);//全ての鯖に登録する場合：.set(commands);にする
     }
 
 });
