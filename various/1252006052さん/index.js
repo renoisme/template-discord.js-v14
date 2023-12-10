@@ -28,7 +28,7 @@ client.on(Events.MessageCreate, async message => {
     if (message.channel.id === '<channel_id>') {
         message.reply('○○')
     }
-    if (message.channel.name === '◯◯◯') {
+    if (message.channel.name === '<channel_name>') {
         message.channel.send('○○');
     }
 });
