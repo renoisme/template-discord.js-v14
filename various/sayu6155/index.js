@@ -58,9 +58,9 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
             await interaction.showModal(modal);
         }
-    }
+    }l
     if (interaction.isModalSubmit()) {
-        if (customId == interaction.customId) {
+        if (customId == 'start_modal') {
             const text = interaction.fields.getTextInputValue('f_input') ?? 'なんもない';
             await interaction.reply({ content: `あなたは ${text} と言いました。`, allowedMentions: { parse: [] } });
         }
