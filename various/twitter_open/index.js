@@ -21,14 +21,8 @@ client.once(Events.ClientReady, (c) => {
 });
 
 client.on(Events.MessageCreate, async (message) => {
-    const messageContent = message.content;
-    if (!(
-        messageContent.includes('fxtwitter.com') ||
-        messageContent.includes('fixupx.com') ||
-        messageContent.includes('vxtwitter.com') ||
-        messageContent.includes('fixvx.com')
-    )) {
-        const matches = messageContent.match(/https:\/\/(twitter\.com|x\.com)\/[^/]+\/status\/\d+/);
+        const matches = message.content.match(/https:\/\/(twitter\.com|x\.com)\/[^/]+\/status\/\d+/);
+    
         if (matches) {
             try {
                 const new_url = new URL(matches[0]);
